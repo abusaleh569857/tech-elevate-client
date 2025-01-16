@@ -2,13 +2,16 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./components/Root.jsx";
+import Root from "./components/Layout/Root.jsx";
 
-import ErrorPage from "./components/ErrorPage.jsx";
-import Home from "./components/Home.jsx";
-import Register from "./components/Register.jsx";
-import Login from "./components/Login.jsx";
+import ErrorPage from "./components/pages/ErrorPage.jsx";
+import Home from "./components/pages/Home.jsx";
+import Register from "./components/pages/Register.jsx";
+import Login from "./components/pages/Login.jsx";
 import AuthProvider from "./components/Provider/AuthProvider.jsx";
+import UserDashboard from "./components/Dashboard/UserDashBoard/UserDashboard.jsx";
+import PrivateRoute from "./components/Route/PrivateRoute.jsx";
+import MyProfile from "./components/Dashboard/UserDashBoard/MyProfile.jsx";
 // import AddBook from "./components/AddBook.jsx";
 // import AllBooks from "./components/AllBooks.jsx";
 // import UpdateBook from "./components/UpdateBook.jsx";
@@ -35,14 +38,28 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login></Login>,
       },
-      // {
-      //   path: "/add-book",
-      //   element: (
-      //     <PrivateRoute>
-      //       <AddBook></AddBook>
-      //     </PrivateRoute>
-      //   ),
-      // },
+      {
+        path: "/user-dashboard",
+        element: (
+          <PrivateRoute>
+            <UserDashboard></UserDashboard>
+          </PrivateRoute>
+        ),
+        children: [
+          {
+            path: "/user-dashboard/my-profile",
+            element: <MyProfile></MyProfile>,
+          },
+          // {
+          //   path: "add-product",
+          //   element: <AddProduct></AddProduct>,
+          // },
+          // {
+          //   path: "my-products",
+          //   element: <MyProducts></MyProducts>,
+          // },
+        ],
+      },
       // {
       //   path: "/all-books",
       //   element: (

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { AuthContext } from "./Provider/AuthProvider";
+import { AuthContext } from "../Provider/AuthProvider";
+import { FaUserCircle } from "react-icons/fa"; // Import the user icon
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -69,17 +70,22 @@ const Navbar = () => {
             </>
           ) : (
             <div className="relative group">
-              <img
-                src={user.photoURL || "https://via.placeholder.com/40"}
-                alt="User"
-                className="w-10 h-10 rounded-full border-2 border-white cursor-pointer"
-              />
+              {/* Show user photo or fallback to icon */}
+              {user.photoURL ? (
+                <img
+                  src={user.photoURL}
+                  alt="User"
+                  className="w-10 h-10 rounded-full border-2 border-white cursor-pointer"
+                />
+              ) : (
+                <FaUserCircle className="w-10 h-10 text-white cursor-pointer" />
+              )}
               <div className="absolute hidden group-hover:block bg-white text-blue-600 rounded shadow-lg right-0 top-8 p-4 w-40">
                 <p className="font-semibold text-sm">
                   {user.displayName || "User"}
                 </p>
                 <NavLink
-                  to="/dashboard"
+                  to="/user-dashboard"
                   className="block py-2 hover:text-blue-800 transition"
                 >
                   Dashboard

@@ -270,9 +270,9 @@ import { IoEye } from "react-icons/io5";
 import { IoMdEyeOff } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { auth } from "./Firebase/Firebase_init";
-import { AuthContext } from "./Provider/AuthProvider";
-import UseTitle from "./Title/UseTitle";
+import { auth } from "../Firebase/Firebase_init";
+import { AuthContext } from "../Provider/AuthProvider";
+import UseTitle from "../Title/UseTitle";
 import axios from "axios";
 import Swal from "sweetalert2"; // Import SweetAlert2
 
