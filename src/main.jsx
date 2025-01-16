@@ -12,6 +12,8 @@ import AuthProvider from "./components/Provider/AuthProvider.jsx";
 import UserDashboard from "./components/Dashboard/UserDashBoard/UserDashboard.jsx";
 import PrivateRoute from "./components/Route/PrivateRoute.jsx";
 import MyProfile from "./components/Dashboard/UserDashBoard/MyProfile.jsx";
+import AddProduct from "./components/Dashboard/UserDashBoard/AddProduct.jsx";
+import MyProduct from "./components/Dashboard/UserDashBoard/MyProduct.jsx";
 // import AddBook from "./components/AddBook.jsx";
 // import AllBooks from "./components/AllBooks.jsx";
 // import UpdateBook from "./components/UpdateBook.jsx";
@@ -50,14 +52,14 @@ const router = createBrowserRouter([
             path: "/user-dashboard/my-profile",
             element: <MyProfile></MyProfile>,
           },
-          // {
-          //   path: "add-product",
-          //   element: <AddProduct></AddProduct>,
-          // },
-          // {
-          //   path: "my-products",
-          //   element: <MyProducts></MyProducts>,
-          // },
+          {
+            path: "/user-dashboard/add-product",
+            element: <AddProduct></AddProduct>,
+          },
+          {
+            path: "/user-dashboard/my-products",
+            element: <MyProduct></MyProduct>,
+          },
         ],
       },
       // {
