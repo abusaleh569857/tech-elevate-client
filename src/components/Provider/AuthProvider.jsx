@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
     } catch (error) {
       setLoading(false);
       setError(error.message);
-      throw error; // Rethrow error to be handled in Register component
+      throw error;
     }
   };
 
