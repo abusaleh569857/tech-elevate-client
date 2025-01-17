@@ -14,6 +14,9 @@ import PrivateRoute from "./components/Route/PrivateRoute.jsx";
 import MyProfile from "./components/Dashboard/UserDashBoard/MyProfile.jsx";
 import AddProduct from "./components/Dashboard/UserDashBoard/AddProduct.jsx";
 import MyProduct from "./components/Dashboard/UserDashBoard/MyProduct.jsx";
+import ModeratorDashboard from "./components/Dashboard/ModeratorDashBoard/ModeratorDashboard.jsx";
+import ProductReviewQueue from "./components/Dashboard/ModeratorDashBoard/ProductReviewQueue.jsx";
+import ReportedContents from "./components/Dashboard/ModeratorDashBoard/ReportedContents.jsx";
 // import AddBook from "./components/AddBook.jsx";
 // import AllBooks from "./components/AllBooks.jsx";
 // import UpdateBook from "./components/UpdateBook.jsx";
@@ -50,15 +53,41 @@ const router = createBrowserRouter([
         children: [
           {
             path: "/user-dashboard/my-profile",
-            element: <MyProfile></MyProfile>,
+            element: (
+              <PrivateRoute>
+                <MyProfile></MyProfile>
+              </PrivateRoute>
+            ),
           },
           {
             path: "/user-dashboard/add-product",
-            element: <AddProduct></AddProduct>,
+            element: (
+              <PrivateRoute>
+                <AddProduct></AddProduct>
+              </PrivateRoute>
+            ),
           },
           {
             path: "/user-dashboard/my-products",
-            element: <MyProduct></MyProduct>,
+            element: (
+              <PrivateRoute>
+                <MyProduct></MyProduct>
+              </PrivateRoute>
+            ),
+          },
+        ],
+      },
+      {
+        path: "/moderator-dashboard",
+        element: <ModeratorDashboard></ModeratorDashboard>,
+        children: [
+          {
+            path: "/moderator-dashboard/review-queue",
+            element: <ProductReviewQueue></ProductReviewQueue>,
+          },
+          {
+            path: "/moderator-dashboard/reported-contents",
+            element: <ReportedContents></ReportedContents>,
           },
         ],
       },
