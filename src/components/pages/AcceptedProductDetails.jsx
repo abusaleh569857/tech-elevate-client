@@ -12,11 +12,6 @@ const AcceptedProductDetails = () => {
   const [product, setProduct] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [reviewData, setReviewData] = useState({ description: "", rating: 0 });
-  //   console.log("user : ", user);
-  //   const user = {
-  //     name: "John Doe",
-  //     image: "https://via.placeholder.com/150",
-  //   }; // Mock user context data
 
   useEffect(() => {
     axios
