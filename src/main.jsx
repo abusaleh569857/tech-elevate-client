@@ -18,6 +18,7 @@ import ModeratorDashboard from "./components/Dashboard/ModeratorDashBoard/Modera
 import ProductReviewQueue from "./components/Dashboard/ModeratorDashBoard/ProductReviewQueue.jsx";
 import ReportedContents from "./components/Dashboard/ModeratorDashBoard/ReportedContents.jsx";
 import ProductDetails from "./components/Dashboard/ModeratorDashBoard/ProductDetails.jsx";
+import ProductsPage from "./components/pages/ProductsPage.jsx";
 // import AddBook from "./components/AddBook.jsx";
 // import AllBooks from "./components/AllBooks.jsx";
 // import UpdateBook from "./components/UpdateBook.jsx";
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/products",
+        element: <ProductsPage></ProductsPage>,
       },
       {
         path: "/user-dashboard",
