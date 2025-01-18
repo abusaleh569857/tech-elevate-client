@@ -19,6 +19,7 @@ import ProductReviewQueue from "./components/Dashboard/ModeratorDashBoard/Produc
 import ReportedContents from "./components/Dashboard/ModeratorDashBoard/ReportedContents.jsx";
 import ProductDetails from "./components/Dashboard/ModeratorDashBoard/ProductDetails.jsx";
 import ProductsPage from "./components/pages/ProductsPage.jsx";
+import AcceptedProductDetails from "./components/pages/AcceptedProductDetails.jsx";
 // import AddBook from "./components/AddBook.jsx";
 // import AllBooks from "./components/AllBooks.jsx";
 // import UpdateBook from "./components/UpdateBook.jsx";
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: <ProductsPage></ProductsPage>,
+      },
+      {
+        path: "/products/:id",
+        element: <AcceptedProductDetails></AcceptedProductDetails>,
       },
       {
         path: "/user-dashboard",

@@ -1,19 +1,22 @@
 // Product Details Page
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import { AuthContext } from "../Provider/AuthProvider";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AcceptedProductDetails = () => {
   const { id } = useParams();
+  const { user } = useContext(AuthContext);
   const [product, setProduct] = useState(null);
   const [reviews, setReviews] = useState([]);
   const [reviewData, setReviewData] = useState({ description: "", rating: 0 });
-  const user = {
-    name: "John Doe",
-    image: "https://via.placeholder.com/150",
-  }; // Mock user context data
+  //   console.log("user : ", user);
+  //   const user = {
+  //     name: "John Doe",
+  //     image: "https://via.placeholder.com/150",
+  //   }; // Mock user context data
 
   useEffect(() => {
     axios
@@ -86,8 +89,9 @@ const AcceptedProductDetails = () => {
       .post(`http://localhost:5000/reviews`, {
         ...reviewData,
         productId: id,
-        reviewerName: user.name,
-        reviewerImage: user.image,
+        reviewerName: user.displayName,
+        reviewerImage: user.photoURL,
+        reviewerEmail: user.email,
       })
       .then((res) => {
         setReviews([...reviews, res.data]);
@@ -161,7 +165,7 @@ const AcceptedProductDetails = () => {
           <label className="block text-gray-700">Reviewer Name</label>
           <input
             type="text"
-            value={user.name}
+            value={user.displayName}
             readOnly
             className="w-full p-2 border border-gray-300 rounded"
           />
@@ -170,7 +174,16 @@ const AcceptedProductDetails = () => {
           <label className="block text-gray-700">Reviewer Image</label>
           <input
             type="text"
-            value={user.image}
+            value={user.photoURL}
+            readOnly
+            className="w-full p-2 border border-gray-300 rounded"
+          />
+        </div>
+        <div>
+          <label className="block text-gray-700">Reviewer Email</label>
+          <input
+            type="text"
+            value={user.email}
             readOnly
             className="w-full p-2 border border-gray-300 rounded"
           />
