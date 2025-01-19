@@ -14,7 +14,7 @@ const AdminDashboard = () => {
           <ul className="space-y-4">
             <li>
               <NavLink
-                to="/admin/statistics"
+                to="/admin-dashboard/statistics"
                 className={({ isActive }) =>
                   isActive
                     ? "text-white bg-blue-500 px-4 py-2 rounded-md block"
@@ -26,7 +26,7 @@ const AdminDashboard = () => {
             </li>
             <li>
               <NavLink
-                to="/admin/manage-users"
+                to="/admin-dashboard/manage-users"
                 className={({ isActive }) =>
                   isActive
                     ? "text-white bg-blue-500 px-4 py-2 rounded-md block"
