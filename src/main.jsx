@@ -20,6 +20,7 @@ import ReportedContents from "./components/Dashboard/ModeratorDashBoard/Reported
 import ProductDetails from "./components/Dashboard/ModeratorDashBoard/ProductDetails.jsx";
 import ProductsPage from "./components/pages/ProductsPage.jsx";
 import AcceptedProductDetails from "./components/pages/AcceptedProductDetails.jsx";
+import AdminDashboard from "./components/Dashboard/AdminDashBoard/AdminDashboard.jsx";
 // import AddBook from "./components/AddBook.jsx";
 // import AllBooks from "./components/AllBooks.jsx";
 // import UpdateBook from "./components/UpdateBook.jsx";
@@ -130,6 +131,40 @@ const router = createBrowserRouter([
             ),
           },
         ],
+      },
+      {
+        path: "/admin-dashboard",
+        element: (
+          <PrivateRoute>
+            <AdminDashboard></AdminDashboard>
+          </PrivateRoute>
+        ),
+        // children: [
+        //   {
+        //     path: "/user-dashboard/my-profile",
+        //     element: (
+        //       <PrivateRoute>
+        //         <MyProfile></MyProfile>
+        //       </PrivateRoute>
+        //     ),
+        //   },
+        //   {
+        //     path: "/user-dashboard/add-product",
+        //     element: (
+        //       <PrivateRoute>
+        //         <AddProduct></AddProduct>
+        //       </PrivateRoute>
+        //     ),
+        //   },
+        //   {
+        //     path: "/user-dashboard/my-products",
+        //     element: (
+        //       <PrivateRoute>
+        //         <MyProduct></MyProduct>
+        //       </PrivateRoute>
+        //     ),
+        //   },
+        // ],
       },
     ],
   },
