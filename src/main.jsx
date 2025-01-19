@@ -98,62 +98,39 @@ const router = createBrowserRouter([
       },
       {
         path: "/moderator-dashboard",
-        element: <ModeratorDashboard></ModeratorDashboard>,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <ModeratorDashboard></ModeratorDashboard>
+          </PrivateRoute>
+        ),
         children: [
           {
             path: "/moderator-dashboard/review-queue",
-            element: <ProductReviewQueue></ProductReviewQueue>,
+            element: (
+              <PrivateRoute>
+                <ProductReviewQueue></ProductReviewQueue>
+              </PrivateRoute>
+            ),
           },
           {
             path: "/moderator-dashboard/reported-contents",
-            element: <ReportedContents></ReportedContents>,
+            element: (
+              <PrivateRoute>
+                <ReportedContents></ReportedContents>
+              </PrivateRoute>
+            ),
           },
           {
             path: "/moderator-dashboard/product/:id",
-            element: <ProductDetails></ProductDetails>,
+            element: (
+              <PrivateRoute>
+                <ProductDetails></ProductDetails>
+              </PrivateRoute>
+            ),
           },
         ],
       },
-      // {
-      //   path: "/all-books",
-      //   element: (
-      //     <PrivateRoute>
-      //       <AllBooks></AllBooks>
-      //     </PrivateRoute>
-      //   ),
-      // },
-      // {
-      //   path: "/update-book/:id",
-      //   element: (
-      //     <PrivateRoute>
-      //       <UpdateBook></UpdateBook>
-      //     </PrivateRoute>
-      //   ),
-      // },
-      // {
-      //   path: "/category/:category",
-      //   element: (
-      //     <PrivateRoute>
-      //       <CategoryPage></CategoryPage>
-      //     </PrivateRoute>
-      //   ),
-      // },
-      // {
-      //   path: "/book-details/:id",
-      //   element: (
-      //     <PrivateRoute>
-      //       <DetailsPage></DetailsPage>
-      //     </PrivateRoute>
-      //   ),
-      // },
-      // {
-      //   path: "/borrowed-books",
-      //   element: (
-      //     <PrivateRoute>
-      //       <BorrowedBooks></BorrowedBooks>
-      //     </PrivateRoute>
-      //   ),
-      // },
     ],
   },
 ]);

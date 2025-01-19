@@ -222,7 +222,7 @@ const Navbar = () => {
               ) : (
                 <FaUserCircle className="w-10 h-10 text-white cursor-pointer" />
               )}
-              <div className="absolute hidden group-hover:block bg-white text-blue-600 rounded shadow-lg right-0 top-8 p-4 w-40">
+              <div className="absolute hidden group-hover:block bg-white text-blue-600 rounded shadow-lg right-0 top-8 p-4 w-40 z-10">
                 <p className="font-semibold text-sm">
                   {user.displayName || "User"}
                 </p>
