@@ -53,7 +53,7 @@ const HomePage = () => {
 
     try {
       await axios.post(
-        `http://localhost:5000/products/${productId}/upvote`,
+        `http://localhost:5000/products/upvote/${productId}`,
         {},
         {
           headers: {
@@ -177,10 +177,11 @@ const HomePage = () => {
                     disabled={product.ownerEmail === user?.email}
                     className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 disabled:opacity-50"
                   >
-                    Upvote ({product.votes})
+                    👍 {product.upvotes}
                   </button>
+
                   <button
-                    onClick={() => navigate(`/product/${product._id}`)}
+                    onClick={() => navigate(`/products/${product._id}`)}
                     className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600"
                   >
                     View Details
@@ -219,7 +220,7 @@ const HomePage = () => {
                     disabled={product.ownerEmail === user?.email}
                     className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 disabled:opacity-50"
                   >
-                    Upvote ({product.votes})
+                    👍 {product.upvotes}
                   </button>
                   <button
                     onClick={() => navigate(`/products/${product._id}`)}
