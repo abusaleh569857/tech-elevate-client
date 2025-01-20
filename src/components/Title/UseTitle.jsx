@@ -9,13 +9,11 @@ const UseTitle = () => {
     const path = location.pathname;
 
     if (path === "/") {
-      document.title = "Home - BookHub";
-      // } else if (path === "/add-book") {
-      //   document.title = "Add Books - BookHub";
-      // } else if (path === "/all-books") {
-      //   document.title = "All Books - BookHub";
-      // } else if (path === "/borrowed-books") {
-      //   document.title = "Borrowed Books - BookHub";
+      document.title = "Home - TechElevate";
+    } else if (path === "/user-dashboard") {
+      document.title = "DashBoard - TechElevate";
+    } else if (path === "/products") {
+      document.title = "Products - TechElevate";
     } else if (path === "/register") {
       document.title = "Register - TechElevate";
     } else if (path === "/login") {
@@ -23,7 +21,7 @@ const UseTitle = () => {
     } else {
       document.title = "TechElevate";
     }
-  }, [location]); // Run effect whenever the location changes
+  }, [location]);
 };
 
 export default UseTitle;
