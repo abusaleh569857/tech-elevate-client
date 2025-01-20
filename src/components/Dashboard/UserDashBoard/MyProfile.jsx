@@ -1,19 +1,80 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import PaymentStripe from "./PaymentStripe";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const MyProfile = () => {
-  const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext); // Use AuthContext for user details only
+  const [isSubscribed, setIsSubscribed] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // Fetch subscription status on component mount
+  useEffect(() => {
+    const fetchSubscriptionStatus = async () => {
+      if (user?.email) {
+        try {
+          const response = await axios.get(
+            `http://localhost:5000/users?email=${user.email}`
+          );
+          console.log(response.data.isSubscribed);
+          if (response.data.isSubscribed) {
+            setIsSubscribed(true); // Update subscription state
+          }
+        } catch (error) {
+          console.error("Error fetching subscription status:", error);
+        }
+      }
+    };
+
+    fetchSubscriptionStatus();
+  }, [user?.email]);
+
   const handleSubscribe = () => {
-    // Open the payment modal
     setIsModalOpen(true);
   };
 
-  const handlePaymentSuccess = () => {
-    // Handle payment success logic (e.g., updating user subscription in the backend)
-    alert("Payment successful! You are now subscribed.");
-    setIsModalOpen(false);
+  const handlePaymentSuccess = async () => {
+    const subscriptionDate = new Date().toISOString(); // Current date
+    const email = user?.email; // Ensure email is available in user object
+
+    try {
+      // API call to update subscription status
+      const response = await axios.put(
+        "http://localhost:5000/update-subscription",
+        {
+          email: email,
+          isSubscribed: true,
+          subscriptionDate: subscriptionDate,
+        }
+      );
+      console.log(response.data.success);
+
+      if (response.data.success) {
+        setIsSubscribed(true); // Update local state
+
+        Swal.fire({
+          icon: "success",
+          title: "Payment Successful",
+          text: "You are now subscribed!",
+        });
+        setIsModalOpen(false);
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Subscription Failed",
+          text: "Subscription update failed. Please contact support.",
+        });
+      }
+    } catch (error) {
+      console.error("Error updating subscription:", error);
+
+      Swal.fire({
+        icon: "error",
+        title: "Subscription Failed",
+        text: "Subscription update failed. Please try again.",
+      });
+    }
   };
 
   return (
@@ -37,7 +98,7 @@ const MyProfile = () => {
         <p className="text-lg">Email: {user?.email || "N/A"}</p>
 
         {/* Membership Section */}
-        {user?.isSubscribed ? (
+        {isSubscribed ? (
           <p className="text-lg mt-4 text-green-600 font-semibold">
             Membership Status: Verified
           </p>
@@ -47,7 +108,7 @@ const MyProfile = () => {
               onClick={handleSubscribe}
               className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600"
             >
-              Subscribe for $10
+              Subscribe for $20
             </button>
           </div>
         )}
@@ -55,26 +116,11 @@ const MyProfile = () => {
 
       {/* Payment Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
-            <h3 className="text-xl font-bold mb-4">Complete Your Payment</h3>
-            <p className="mb-6">
-              Subscribe for just $10 to enjoy membership benefits.
-            </p>
-            <button
-              onClick={handlePaymentSuccess}
-              className="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 mb-4"
-            >
-              Pay $10
-            </button>
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="text-red-500 hover:underline"
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
+        <PaymentStripe
+          amount={20}
+          onPaymentSuccess={handlePaymentSuccess}
+          onCancel={() => setIsModalOpen(false)}
+        />
       )}
     </div>
   );
