@@ -26,7 +26,7 @@
 //       axios
 //         .get(`http://localhost:5000/users?email=${user.email}`)
 //         .then((response) => {
-//           console.log(response.data.role);
+//           // console.log(response.data.role);
 //           setUserRole(response.data?.role || "user");
 //         })
 //         .catch((error) => {
@@ -38,6 +38,13 @@
 //   return (
 //     <nav className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white shadow-md">
 //       <div className="container mx-auto px-4 py-4 flex justify-between items-center relative">
+//         {/* Logo Section */}
+//         <div className="flex items-center rounded ml-3">
+//           <h1 className="text-2xl font-bold tracking-wide hover:text-blue-200 text-center lg:text-left">
+//             TechElevate
+//           </h1>
+//         </div>
+
 //         {/* Hamburger Menu for Mobile */}
 //         <div
 //           className="lg:hidden cursor-pointer"
@@ -47,11 +54,6 @@
 //           <div className="w-6 h-1 bg-white mb-1 rounded"></div>
 //           <div className="w-6 h-1 bg-white rounded"></div>
 //         </div>
-
-//         {/* Navbar Brand */}
-//         <h1 className="text-2xl font-bold tracking-wide hover:text-blue-200 flex-grow text-center lg:text-left lg:flex-grow-0">
-//           TechElevate
-//         </h1>
 
 //         {/* Navbar Links */}
 //         <div
@@ -160,7 +162,6 @@ const Navbar = () => {
       axios
         .get(`http://localhost:5000/users?email=${user.email}`)
         .then((response) => {
-          console.log(response.data.role);
           setUserRole(response.data?.role || "user");
         })
         .catch((error) => {
@@ -173,20 +174,20 @@ const Navbar = () => {
     <nav className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white shadow-md">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center relative">
         {/* Logo Section */}
-        <div className="flex items-center rounded ml-3">
+        <div className="flex items-center">
+          {/* Hamburger Menu for Mobile */}
+          <div
+            className="lg:hidden cursor-pointer mr-4"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <div className="w-6 h-1 bg-white mb-1 rounded"></div>
+            <div className="w-6 h-1 bg-white mb-1 rounded"></div>
+            <div className="w-6 h-1 bg-white rounded"></div>
+          </div>
+
           <h1 className="text-2xl font-bold tracking-wide hover:text-blue-200 text-center lg:text-left">
             TechElevate
           </h1>
-        </div>
-
-        {/* Hamburger Menu for Mobile */}
-        <div
-          className="lg:hidden cursor-pointer"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <div className="w-6 h-1 bg-white mb-1 rounded"></div>
-          <div className="w-6 h-1 bg-white mb-1 rounded"></div>
-          <div className="w-6 h-1 bg-white rounded"></div>
         </div>
 
         {/* Navbar Links */}

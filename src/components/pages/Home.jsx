@@ -138,7 +138,7 @@ const Home = () => {
         <Slider {...sliderSettings}>
           <div className="relative">
             <img
-              src="https://i.ibb.co/7KR99nb/book12.webp"
+              src="https://i.ibb.co.com/y8RFxnk/img1.jpg"
               alt="Banner 1"
               className="w-full h-80 object-cover"
             />
@@ -150,7 +150,7 @@ const Home = () => {
           </div>
           <div className="relative">
             <img
-              src="https://i.ibb.co/7KR99nb/book12.webp"
+              src="https://i.ibb.co.com/Zd2kJmL/download.jpg"
               alt="Banner 2"
               className="w-full h-80 object-cover"
             />
@@ -162,7 +162,7 @@ const Home = () => {
           </div>
           <div className="relative">
             <img
-              src="https://i.ibb.co/7KR99nb/book12.webp"
+              src="https://i.ibb.co.com/Swv9Y1r/images.jpg"
               alt="Banner 3"
               className="w-full h-80 object-cover"
             />
@@ -289,6 +289,14 @@ const Home = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="text-center mt-10">
+          <button
+            onClick={() => navigate("/products")}
+            className="py-3 px-6 rounded-md bg-gradient-to-r from-green-500 to-blue-500 text-white font-semibold hover:opacity-90"
+          >
+            Show All Products
+          </button>
         </div>
       </section>
     </div>
