@@ -8,7 +8,7 @@ const Statistics = () => {
   useEffect(() => {
     // Fetch data from the API
     axios
-      .get("http://localhost:5000/site-statistics")
+      .get("https://tech-elevate-server.vercel.app/site-statistics")
       .then((res) => setData(res.data))
       .catch((error) =>
         console.error("Error fetching site statistics:", error)

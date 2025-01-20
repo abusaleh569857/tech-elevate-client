@@ -11,7 +11,7 @@
 //   useEffect(() => {
 //     // Fetch the specific product by ID
 //     axios
-//       .get(`http://localhost:5000/products/${id}`)
+//       .get(`https://tech-elevate-server.vercel.app/products/${id}`)
 //       .then((res) => {
 //         setProduct(res.data);
 //         setLoading(false);
@@ -152,7 +152,7 @@ const ProductDetails = () => {
   useEffect(() => {
     // Fetch the specific product by ID
     axios
-      .get(`http://localhost:5000/products/${id}`)
+      .get(`https://tech-elevate-server.vercel.app/products/${id}`)
       .then((res) => {
         setProduct(res.data);
         setLoading(false);

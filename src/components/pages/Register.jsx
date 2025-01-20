@@ -80,7 +80,7 @@ const Register = () => {
 
         // Save user data to the backend using axios
         const response = await axios.post(
-          "http://localhost:5000/users",
+          "https://tech-elevate-server.vercel.app/users",
           userData
         );
 
@@ -125,7 +125,7 @@ const Register = () => {
 
       // Save user data to backend using axios
       const response = await axios.post(
-        "http://localhost:5000/users",
+        "https://tech-elevate-server.vercel.app/users",
         userData
       );
 

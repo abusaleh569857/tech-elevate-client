@@ -17,7 +17,7 @@ const ProductsPage = () => {
   const fetchProducts = (page = 1, query = "") => {
     axios
       .get(
-        `http://localhost:5000/accepted-products?page=${page}&search=${query}`
+        `https://tech-elevate-server.vercel.app/accepted-products?page=${page}&search=${query}`
       )
       .then((res) => {
         setProducts(res.data.products);
@@ -42,7 +42,7 @@ const ProductsPage = () => {
     } else {
       axios
         .post(
-          `http://localhost:5000/products/${productId}/upvote`,
+          `https://tech-elevate-server.vercel.app/products/${productId}/upvote`,
           {},
           {
             headers: {

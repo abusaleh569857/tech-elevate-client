@@ -14,7 +14,7 @@ const MyProducts = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/products?ownerEmail=${user.email}`
+          `https://tech-elevate-server.vercel.app/products?ownerEmail=${user.email}`
         );
 
         setProducts(response.data);
@@ -41,7 +41,9 @@ const MyProducts = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:5000/products/${id}`);
+          await axios.delete(
+            `https://tech-elevate-server.vercel.app/products/${id}`
+          );
           setProducts(products.filter((product) => product._id !== id));
           Swal.fire("Deleted!", "Your product has been deleted.", "success");
         } catch (error) {
@@ -57,7 +59,7 @@ const MyProducts = () => {
     e.preventDefault();
     try {
       await axios.put(
-        `http://localhost:5000/products/${editingProduct._id}`,
+        `https://tech-elevate-server.vercel.app/products/${editingProduct._id}`,
         editingProduct
       );
       setEditingProduct(null);

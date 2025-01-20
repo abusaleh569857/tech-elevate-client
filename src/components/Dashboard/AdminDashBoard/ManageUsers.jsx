@@ -8,7 +8,7 @@ const ManageUsers = () => {
   // Fetch Users
   useEffect(() => {
     axios
-      .get("http://localhost:5000/all-users")
+      .get("https://tech-elevate-server.vercel.app/all-users")
       .then((res) => {
         setUsers(res.data);
       })
@@ -18,7 +18,9 @@ const ManageUsers = () => {
   // Handle Role Update
   const updateUserRole = (userId, role) => {
     axios
-      .put(`http://localhost:5000/users/${userId}/role`, { role })
+      .put(`https://tech-elevate-server.vercel.app/users/${userId}/role`, {
+        role,
+      })
       .then((res) => {
         Swal.fire({
           title: `User role updated to ${role}!`,

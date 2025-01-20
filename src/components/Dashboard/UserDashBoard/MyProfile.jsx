@@ -15,7 +15,7 @@ const MyProfile = () => {
       if (user?.email) {
         try {
           const response = await axios.get(
-            `http://localhost:5000/users?email=${user.email}`
+            `https://tech-elevate-server.vercel.app/users?email=${user.email}`
           );
           console.log(response.data.isSubscribed);
           if (response.data.isSubscribed) {
@@ -41,7 +41,7 @@ const MyProfile = () => {
     try {
       // API call to update subscription status
       const response = await axios.put(
-        "http://localhost:5000/update-subscription",
+        "https://tech-elevate-server.vercel.app/update-subscription",
         {
           email: email,
           isSubscribed: true,

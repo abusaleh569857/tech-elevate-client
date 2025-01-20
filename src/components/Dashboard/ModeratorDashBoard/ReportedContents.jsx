@@ -8,7 +8,7 @@
 
 //   useEffect(() => {
 //     axios
-//       .get("http://localhost:5000/reported-products")
+//       .get("https://tech-elevate-server.vercel.app/reported-products")
 //       .then((res) => {
 //         setReportedProducts(res.data);
 //       })
@@ -20,7 +20,7 @@
 //   const handleDelete = async (id) => {
 //     try {
 //       const response = await axios.delete(
-//         `http://localhost:5000/reported/products/${id}`
+//         `https://tech-elevate-server.vercel.app/reported/products/${id}`
 //       );
 //       if (response.data.success) {
 //         setReportedProducts((prev) =>
@@ -85,7 +85,7 @@ const ReportedContents = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/reported-products")
+      .get("https://tech-elevate-server.vercel.app/reported-products")
       .then((res) => {
         setReportedProducts(res.data);
       })
@@ -108,7 +108,7 @@ const ReportedContents = () => {
     if (confirmResult.isConfirmed) {
       try {
         const response = await axios.delete(
-          `http://localhost:5000/reported/products/${id}`
+          `https://tech-elevate-server.vercel.app/reported/products/${id}`
         );
         if (response.data.success) {
           setReportedProducts((prev) =>

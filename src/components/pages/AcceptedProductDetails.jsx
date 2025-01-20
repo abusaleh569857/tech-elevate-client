@@ -15,12 +15,12 @@
 
 //   useEffect(() => {
 //     axios
-//       .get(`http://localhost:5000/products/${id}`)
+//       .get(`https://tech-elevate-server.vercel.app/products/${id}`)
 //       .then((res) => setProduct(res.data))
 //       .catch((err) => console.error("Error fetching product details:", err));
 
 //     axios
-//       .get(`http://localhost:5000/products/${id}/reviews`)
+//       .get(`https://tech-elevate-server.vercel.app/products/${id}/reviews`)
 //       .then((res) => setReviews(res.data))
 //       .catch((err) => console.error("Error fetching reviews:", err));
 //   }, [id]);
@@ -28,7 +28,7 @@
 //   const handleUpvote = () => {
 //     axios
 //       .post(
-//         `http://localhost:5000/products/${id}/upvote`,
+//         `https://tech-elevate-server.vercel.app/products/${id}/upvote`,
 //         {},
 //         {
 //           headers: {
@@ -55,7 +55,7 @@
 //   const handleReport = () => {
 //     axios
 //       .post(
-//         `http://localhost:5000/products/${id}/report`,
+//         `https://tech-elevate-server.vercel.app/products/${id}/report`,
 //         {},
 //         {
 //           headers: {
@@ -81,7 +81,7 @@
 //   const handleReviewSubmit = (e) => {
 //     e.preventDefault();
 //     axios
-//       .post(`http://localhost:5000/reviews`, {
+//       .post(`https://tech-elevate-server.vercel.app/reviews`, {
 //         ...reviewData,
 //         productId: id,
 //         reviewerName: user.displayName,
@@ -237,12 +237,12 @@ const AcceptedProductDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/products/${id}`)
+      .get(`https://tech-elevate-server.vercel.app/products/${id}`)
       .then((res) => setProduct(res.data))
       .catch((err) => console.error("Error fetching product details:", err));
 
     axios
-      .get(`http://localhost:5000/products/${id}/reviews`)
+      .get(`https://tech-elevate-server.vercel.app/products/${id}/reviews`)
       .then((res) => setReviews(res.data))
       .catch((err) => console.error("Error fetching reviews:", err));
   }, [id]);
@@ -250,7 +250,7 @@ const AcceptedProductDetails = () => {
   const handleUpvote = () => {
     axios
       .post(
-        `http://localhost:5000/products/${id}/upvote`,
+        `https://tech-elevate-server.vercel.app/products/${id}/upvote`,
         {},
         {
           headers: {
@@ -277,7 +277,7 @@ const AcceptedProductDetails = () => {
   const handleReport = () => {
     axios
       .post(
-        `http://localhost:5000/products/${id}/report`,
+        `https://tech-elevate-server.vercel.app/products/${id}/report`,
         {},
         {
           headers: {
@@ -303,7 +303,7 @@ const AcceptedProductDetails = () => {
   const handleReviewSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`http://localhost:5000/reviews`, {
+      .post(`https://tech-elevate-server.vercel.app/reviews`, {
         ...reviewData,
         productId: id,
         reviewerName: user.displayName,

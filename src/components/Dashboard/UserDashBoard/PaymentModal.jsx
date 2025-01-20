@@ -14,7 +14,7 @@
 //   const handleApplyCoupon = async () => {
 //     try {
 //       const response = await axios.post(
-//         "http://localhost:5000/validate-coupon",
+//         "https://tech-elevate-server.vercel.app/validate-coupon",
 //         {
 //           couponCode,
 //         }
@@ -56,7 +56,7 @@
 //     try {
 //       // Request client secret from the server
 //       const response = await axios.post(
-//         "http://localhost:5000/create-payment-intent",
+//         "https://tech-elevate-server.vercel.app/create-payment-intent",
 //         { amount: finalAmount * 100 } // Stripe expects the amount in cents
 //       );
 
@@ -160,7 +160,7 @@ const PaymentModal = ({ amount, onPaymentSuccess, onCancel }) => {
   const handleApplyCoupon = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/validate-coupon",
+        "https://tech-elevate-server.vercel.app/validate-coupon",
         {
           couponCode,
         }
@@ -201,7 +201,7 @@ const PaymentModal = ({ amount, onPaymentSuccess, onCancel }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/create-payment-intent",
+        "https://tech-elevate-server.vercel.app/create-payment-intent",
         { amount: finalAmount * 100 }
       );
 

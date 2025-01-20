@@ -8,7 +8,7 @@
 
 //   useEffect(() => {
 //     // Fetch all products from the backend
-//     axios.get("http://localhost:5000/all-products").then((res) => {
+//     axios.get("https://tech-elevate-server.vercel.app/all-products").then((res) => {
 //       const sortedProducts = res.data.sort((a, b) =>
 //         a.status === "pending" && b.status !== "pending" ? -1 : 1
 //       );
@@ -19,7 +19,7 @@
 //   const handleAction = async (id, action) => {
 //     try {
 //       const response = await axios.patch(
-//         `http://localhost:5000/update-products/${id}`,
+//         `https://tech-elevate-server.vercel.app/update-products/${id}`,
 //         { action }
 //       );
 //       if (response.data.success) {
@@ -42,7 +42,7 @@
 //   const handleMakeFeatured = async (id) => {
 //     try {
 //       const response = await axios.patch(
-//         `http://localhost:5000/update-products/${id}`,
+//         `https://tech-elevate-server.vercel.app/update-products/${id}`,
 //         {
 //           isFeatured: true,
 //         }
@@ -141,18 +141,20 @@ const ProductReviewQueue = () => {
 
   useEffect(() => {
     // Fetch all products from the backend
-    axios.get("http://localhost:5000/all-products").then((res) => {
-      const sortedProducts = res.data.sort((a, b) =>
-        a.status === "Pending" && b.status !== "Pending" ? -1 : 1
-      );
-      setProducts(sortedProducts);
-    });
+    axios
+      .get("https://tech-elevate-server.vercel.app/all-products")
+      .then((res) => {
+        const sortedProducts = res.data.sort((a, b) =>
+          a.status === "Pending" && b.status !== "Pending" ? -1 : 1
+        );
+        setProducts(sortedProducts);
+      });
   }, []);
 
   const handleAction = async (id, action) => {
     try {
       const response = await axios.patch(
-        `http://localhost:5000/update-products/${id}`,
+        `https://tech-elevate-server.vercel.app/update-products/${id}`,
         { action }
       );
       if (response.data.success) {
@@ -191,7 +193,7 @@ const ProductReviewQueue = () => {
   const handleMakeFeatured = async (id) => {
     try {
       const response = await axios.patch(
-        `http://localhost:5000/update-products/${id}`,
+        `https://tech-elevate-server.vercel.app/update-products/${id}`,
         {
           isFeatured: true,
         }

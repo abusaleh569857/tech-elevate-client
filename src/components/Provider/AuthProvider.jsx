@@ -69,7 +69,7 @@ const AuthProvider = ({ children }) => {
         } else {
           const userInfo = { email: currentUser.email };
           axios
-            .post("http://localhost:5000/jwt", userInfo)
+            .post("https://tech-elevate-server.vercel.app/jwt", userInfo)
             .then((res) => {
               if (res.data.token) {
                 localStorage.setItem("userToken", res.data.token);
@@ -199,7 +199,7 @@ export default AuthProvider;
 //         } else {
 //           const userInfo = { email: currentUser.email };
 //           axios
-//             .post("http://localhost:5000/jwt", userInfo)
+//             .post("https://tech-elevate-server.vercel.app/jwt", userInfo)
 //             .then((res) => {
 //               console.log(res.data);
 //               if (res.data.token) {

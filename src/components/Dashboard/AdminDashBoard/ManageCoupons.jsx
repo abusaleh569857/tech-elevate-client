@@ -17,7 +17,7 @@ const ManageCoupons = () => {
   // Fetch Coupons
   useEffect(() => {
     axios
-      .get("http://localhost:5000/coupons")
+      .get("https://tech-elevate-server.vercel.app/coupons")
       .then((res) => {
         setCoupons(res.data);
       })
@@ -37,7 +37,10 @@ const ManageCoupons = () => {
     if (isEditing) {
       // Update coupon
       axios
-        .put(`http://localhost:5000/coupons/${editId}`, formData)
+        .put(
+          `https://tech-elevate-server.vercel.app/coupons/${editId}`,
+          formData
+        )
         .then((res) => {
           Swal.fire({
             title: "Coupon updated successfully!",
@@ -59,7 +62,7 @@ const ManageCoupons = () => {
     } else {
       // Add coupon
       axios
-        .post("http://localhost:5000/coupons", formData)
+        .post("https://tech-elevate-server.vercel.app/coupons", formData)
         .then((res) => {
           Swal.fire({
             title: "Coupon added successfully!",
@@ -84,7 +87,7 @@ const ManageCoupons = () => {
   // Delete Coupon
   const handleDeleteCoupon = (id) => {
     axios
-      .delete(`http://localhost:5000/coupons/${id}`)
+      .delete(`https://tech-elevate-server.vercel.app/coupons/${id}`)
       .then(() => {
         Swal.fire({
           title: "Coupon deleted successfully!",

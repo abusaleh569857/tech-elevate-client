@@ -24,7 +24,7 @@
 //   useEffect(() => {
 //     if (user?.email) {
 //       axios
-//         .get(`http://localhost:5000/users?email=${user.email}`)
+//         .get(`https://tech-elevate-server.vercel.app/users?email=${user.email}`)
 //         .then((response) => {
 //           // console.log(response.data.role);
 //           setUserRole(response.data?.role || "user");
@@ -160,7 +160,7 @@ const Navbar = () => {
   useEffect(() => {
     if (user?.email) {
       axios
-        .get(`http://localhost:5000/users?email=${user.email}`)
+        .get(`https://tech-elevate-server.vercel.app/users?email=${user.email}`)
         .then((response) => {
           setUserRole(response.data?.role || "user");
         })

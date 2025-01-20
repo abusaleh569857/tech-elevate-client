@@ -41,7 +41,7 @@ const AddProduct = () => {
 
   //   try {
   //     const response = await axios.post(
-  //       "http://localhost:5000/add-products",
+  //       "https://tech-elevate-server.vercel.app/add-products",
   //       productData
   //     );
   //     if (response.data.success) {
@@ -76,7 +76,7 @@ const AddProduct = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/add-products",
+        "https://tech-elevate-server.vercel.app/add-products",
         productData
       );
       if (response.data.success) {

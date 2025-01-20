@@ -19,7 +19,7 @@ const Home = () => {
   // Fetch Featured Products
   useEffect(() => {
     axios
-      .get("http://localhost:5000/products-featured")
+      .get("https://tech-elevate-server.vercel.app/products-featured")
       .then((res) => {
         setFeaturedProducts(res.data);
       })
@@ -31,7 +31,7 @@ const Home = () => {
   // Fetch Trending Products
   useEffect(() => {
     axios
-      .get("http://localhost:5000/products-trending")
+      .get("https://tech-elevate-server.vercel.app/products-trending")
       .then((res) => {
         setTrendingProducts(res.data);
       })
@@ -43,7 +43,7 @@ const Home = () => {
   // Fetch Coupons
   useEffect(() => {
     axios
-      .get("http://localhost:5000/coupons")
+      .get("https://tech-elevate-server.vercel.app/coupons")
       .then((res) => {
         console.log(res.data);
         const validCoupons = res.data.filter(
@@ -71,7 +71,7 @@ const Home = () => {
 
     try {
       await axios.post(
-        `http://localhost:5000/products/upvote/${productId}`,
+        `https://tech-elevate-server.vercel.app/products/upvote/${productId}`,
         {},
         {
           headers: {
