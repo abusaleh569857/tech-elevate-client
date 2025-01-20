@@ -8,11 +8,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and Description */}
           <div className="md:ml-4">
-            <h1 className="text-2xl font-bold">BookHub</h1>
+            <h1 className="text-2xl font-bold">TechElevate</h1>
             <p className="text-gray-400 mt-2">
-              BookHub allows users to borrow books online. The platform features
-              an intuitive interface where you can browse through categories,
-              view book details.
+              "TechElevate is a platform dedicated to fostering innovation and
+              creativity in technology. It enables users to share ideas,
+              showcase products, and connect with a community of tech
+              enthusiasts and entrepreneurs. Empowering innovation has never
+              been easier."
             </p>
           </div>
 
@@ -26,8 +28,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-gray-400">
-                  Categories
+                <a href="/products" className="hover:text-gray-400">
+                  Products
                 </a>
               </li>
               <li>
@@ -69,7 +71,7 @@ const Footer = () => {
             </span>
           </p>
           <p className="text-gray-400 mt-2">
-            &copy; {new Date().getFullYear()} BookHub. All Rights Reserved.
+            &copy; {new Date().getFullYear()} TechElevate. All Rights Reserved.
           </p>
         </div>
       </div>
