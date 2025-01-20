@@ -23,6 +23,7 @@ import AcceptedProductDetails from "./components/pages/AcceptedProductDetails.js
 import AdminDashboard from "./components/Dashboard/AdminDashBoard/AdminDashboard.jsx";
 import ManageUsers from "./components/Dashboard/AdminDashBoard/ManageUsers.jsx";
 import ManageCoupons from "./components/Dashboard/AdminDashBoard/ManageCoupons.jsx";
+import Statistics from "./components/Dashboard/AdminDashBoard/Statistics.jsx";
 // import AddBook from "./components/AddBook.jsx";
 // import AllBooks from "./components/AllBooks.jsx";
 // import UpdateBook from "./components/UpdateBook.jsx";
@@ -155,6 +156,14 @@ const router = createBrowserRouter([
             element: (
               <PrivateRoute>
                 <ManageCoupons></ManageCoupons>
+              </PrivateRoute>
+            ),
+          },
+          {
+            path: "statistics",
+            element: (
+              <PrivateRoute>
+                <Statistics></Statistics>
               </PrivateRoute>
             ),
           },
