@@ -22,6 +22,7 @@ import ProductsPage from "./components/pages/ProductsPage.jsx";
 import AcceptedProductDetails from "./components/pages/AcceptedProductDetails.jsx";
 import AdminDashboard from "./components/Dashboard/AdminDashBoard/AdminDashboard.jsx";
 import ManageUsers from "./components/Dashboard/AdminDashBoard/ManageUsers.jsx";
+import ManageCoupons from "./components/Dashboard/AdminDashBoard/ManageCoupons.jsx";
 // import AddBook from "./components/AddBook.jsx";
 // import AllBooks from "./components/AllBooks.jsx";
 // import UpdateBook from "./components/UpdateBook.jsx";
@@ -146,6 +147,14 @@ const router = createBrowserRouter([
             element: (
               <PrivateRoute>
                 <ManageUsers></ManageUsers>
+              </PrivateRoute>
+            ),
+          },
+          {
+            path: "manage-coupons",
+            element: (
+              <PrivateRoute>
+                <ManageCoupons></ManageCoupons>
               </PrivateRoute>
             ),
           },

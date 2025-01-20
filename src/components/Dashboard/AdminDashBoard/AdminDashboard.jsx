@@ -38,7 +38,7 @@ const AdminDashboard = () => {
             </li>
             <li>
               <NavLink
-                to="/admin/manage-coupons"
+                to="/admin-dashboard/manage-coupons"
                 className={({ isActive }) =>
                   isActive
                     ? "text-white bg-blue-500 px-4 py-2 rounded-md block"
