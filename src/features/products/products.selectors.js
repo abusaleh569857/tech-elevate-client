@@ -1,0 +1,13 @@
+export const selectProductsState = (state) => state.products;
+export const selectFeaturedProducts = (state) => state.products.featuredProducts;
+export const selectTrendingProducts = (state) => state.products.trendingProducts;
+export const selectHomeCoupons = (state) => state.products.coupons;
+export const selectAcceptedProducts = (state) => state.products.acceptedProducts;
+export const selectAcceptedProductsMeta = (state) => state.products.acceptedProductsMeta;
+export const selectProductDetails = (state) => state.products.productDetails;
+export const selectProductReviews = (state) => state.products.reviews;
+export const selectMyProducts = (state) => state.products.myProducts;
+export const selectModerationQueue = (state) => state.products.moderationQueue;
+export const selectReportedProducts = (state) => state.products.reportedProducts;
+export const selectProductsLoading = (state) => state.products.loading;
+export const selectProductsError = (state) => state.products.error;
