@@ -25,4 +25,3 @@ export const publicRoutes = [
     element: withLazy(Login),
   },
 ];
-
