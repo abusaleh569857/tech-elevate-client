@@ -1,12 +1,12 @@
-# TechElevate - Product Discovery and Role-Based Moderation Platform
+# 🚀 TechElevate - Product Discovery and Role-Based Moderation Platform
 
-A production-oriented **full-stack web application** built with **React + Vite + Express + MongoDB** for tech product publishing, moderation workflow, admin governance, coupons, and Stripe membership payments.
+A production-oriented **full-stack web application** built with **React + Vite** (frontend), **Tailwind CSS** (UI), **Redux Toolkit** (state management), **Firebase Auth + JWT** (authentication), and **Express + MongoDB** (backend) for tech product publishing, moderation workflow, admin governance, coupons, and Stripe membership payments.
 
 ---
 
 ## Live Demo
 
-- Frontend: [TechElevate Live](https://tech-elevate.web.app)
+- Visit Live Website: [TechElevate](https://tech-elevate.web.app)
 
 ---
 
@@ -73,7 +73,6 @@ CLIENT_ORIGIN=
 
 **For actual environment variable values, please contact the project author.**
 
-
 ### 4. How to Run the Project
 
 Run backend and frontend in separate terminals:
@@ -91,6 +90,7 @@ npm run dev
 ```
 
 Open:
+
 - Frontend: [http://localhost:5173](http://localhost:5173)
 - Backend: [http://localhost:5000](http://localhost:5000)
 
@@ -426,8 +426,6 @@ Current frontend integration endpoints:
 
 ## Screenshots
 
-Recommended screenshot paths (add files under an `images/` folder):
-
 - `images/home.png`
 - `images/user-dashboard.png`
 - `images/moderator-dashboard.png`
@@ -437,3 +435,5 @@ Recommended screenshot paths (add files under an `images/` folder):
 ---
 
 **TechElevate**: Innovating the Future of Technology.
+
+**Developed by Abusaleh Alam Khan (Seen Game Pro Project)**
