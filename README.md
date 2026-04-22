@@ -10,6 +10,19 @@ A production-oriented **full-stack web application** built with **React + Vite**
 
 ---
 
+## Quick Navigation
+
+- [Setup and Run](#setup-and-run)
+- [Architecture Overview](#architecture-overview)
+- [API Overview](#api-overview)
+- [Technical Decisions](#technical-decisions)
+- [Challenges Faced](#challenges-faced)
+- [Current Completion Snapshot](#current-completion-snapshot)
+- [User Flow (Quick Manual)](#user-flow-quick-manual)
+- [Screenshots](#screenshots)
+
+---
+
 ## Setup and Run
 
 Follow these steps to run the full project locally (frontend + backend).
@@ -34,6 +47,12 @@ git clone <your-repo-url>
 # Frontend deps
 cd Tech-Elevate-Frontend
 npm install
+
+## Backend Repository
+
+- Backend Repo: [tech-elevate-server](https://github.com/abusaleh569857/tech-elevate-server)
+
+---
 
 # Backend deps
 cd ../tech-elevate-server
