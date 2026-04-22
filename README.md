@@ -50,12 +50,6 @@ git clone <your-repo-url>
 cd Tech-Elevate-Frontend
 npm install
 
-## Backend Repository
-
-- Backend Repo: [tech-elevate-server](https://github.com/abusaleh569857/tech-elevate-server)
-
----
-
 # Backend deps
 cd ../tech-elevate-server
 npm install
@@ -458,4 +452,3 @@ Current frontend integration endpoints:
 **TechElevate**: Innovating the Future of Technology.
 
 **Developed by Abusaleh Alam Khan (Seen Game Pro Project)**
-
