@@ -10,6 +10,19 @@ A production-oriented **full-stack web application** built with **React + Vite**
 
 ---
 
+## Quick Navigation
+
+- [Setup and Run](#setup-and-run)
+- [Architecture Overview](#architecture-overview)
+- [API Overview](#api-overview)
+- [Technical Decisions](#technical-decisions)
+- [Challenges Faced](#challenges-faced)
+- [Current Completion Snapshot](#current-completion-snapshot)
+- [User Flow (Quick Manual)](#user-flow-quick-manual)
+- [Screenshots](#screenshots)
+
+---
+
 ## Setup and Run
 
 Follow these steps to run the full project locally (frontend + backend).
@@ -26,6 +39,8 @@ Before you begin, make sure these are installed:
 ### 2. Installation Steps
 
 Clone and install dependencies for both apps:
+
+- Backend Repo: [tech-elevate-server](https://github.com/abusaleh569857/tech-elevate-server)
 
 ```bash
 # Clone
@@ -437,3 +452,4 @@ Current frontend integration endpoints:
 **TechElevate**: Innovating the Future of Technology.
 
 **Developed by Abusaleh Alam Khan (Seen Game Pro Project)**
+
