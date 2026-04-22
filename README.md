@@ -50,6 +50,12 @@ git clone <your-repo-url>
 cd Tech-Elevate-Frontend
 npm install
 
+## Backend Repository
+
+- Backend Repo: [tech-elevate-server](https://github.com/abusaleh569857/tech-elevate-server)
+
+---
+
 # Backend deps
 cd ../tech-elevate-server
 npm install
